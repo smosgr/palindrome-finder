@@ -1,0 +1,42 @@
+group 'gr.smos'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'jacoco'
+apply plugin: 'idea'
+
+mainClassName = "App"
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+test {
+    beforeTest { descriptor -> logger.lifecycle("Running: " + descriptor) }
+    reports.html.enabled = true
+    reports.junitXml.enabled = true
+
+    jacoco {
+        append = true
+    }
+
+    reports {
+        html.enabled true
+        html.destination file("${buildDir}/reports/unit-tests")
+    }
+
+
+}
+
+tasks.withType(Test) {
+    testLogging {
+        showStandardStreams = true
+        events("PASSED", "FAILED", "SKIPPED")
+    }
+}
