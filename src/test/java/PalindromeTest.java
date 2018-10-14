@@ -16,7 +16,7 @@ public class PalindromeTest {
     }
 
     @Test
-    public void check_Given_String_Is_not_Reverse_Of_Itself() {
+    public void check_Given_String_Is_Not_Reverse_Of_Itself() {
 
         //when
         String firstPalindrome = "not_palindrome";
