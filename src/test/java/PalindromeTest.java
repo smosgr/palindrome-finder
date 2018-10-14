@@ -8,12 +8,11 @@ public class PalindromeTest {
     @Test
     public void check_Given_String_Is_Reverse_Of_Itself() {
 
-        //given
+        //when
         String firstPalindrome = "radar";
 
-        //when-then
-        Palindrome palindrome = new Palindrome();
-        assertTrue(palindrome.checkForPalindrome(firstPalindrome));
+        //then
+        assertTrue(checkPalindromeInSequence(firstPalindrome));
     }
 
     @Test

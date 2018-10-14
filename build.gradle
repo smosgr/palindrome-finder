@@ -30,8 +30,7 @@ test {
         html.enabled true
         html.destination file("${buildDir}/reports/unit-tests")
     }
-
-
+    
 }
 
 tasks.withType(Test) {
