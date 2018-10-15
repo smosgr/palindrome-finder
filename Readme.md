@@ -1,4 +1,5 @@
-****Palindrome-finder****
+****PalindromeFinder-finder****
+-
 
 
 The application finds the 3 longest unique palindromes in a supplied string. For the 3 longest palindromes, it reports the palindrome, start index and length, in descending order of length.
@@ -14,29 +15,44 @@ Text: abccba, Index: 5 Length: 6
 
 ***Application build***
 
-The following command will compile and  build the entire project, as well as it will run the all the tests, which will be displayed in the logs along with the result of each one (e.g. Passed, Failed or Skipped). A report will also be generated in `palindrome-finder/build/reports/unit-tests/index.html`  
+
+In order to run the application you will required *gradle*. 
+The following command will compile and  build the entire project. It will also run all tests, show each result seperately e.g. Passed, Failed or Skipped)
+ and will generate a report in `../palindrome-finder/build/reports/unit-tests/index.html`  
 
 ````
 ./gradlew clean build
-````
-_*Jacoco Report* (Can be run separately)_
 
-Generates a test coverage report in ``palindrome-finder/build/reports/coverage/test/index.html``.
+````
+Then use your preferred browser to look at unit test report.
+
+
+***Jacoco Report*** (Can be run separately)
+
+Generates a test coverage report in ``../palindrome-finder/build/reports/coverage/test/index.html``.
 ````
 ./gradlew jacocoTestReport
 ````
-Then use your preferred browser to look at the report.
+Then use your preferred browser to look at the test coverage report.
+
 
 ***Run Application***
+
 ````
 - cd ~/palindrome-finder
+
 
 - java -jar build/libs/palindrome-finder-1.0-SNAPSHOT.jar
 ````
 
 
-
 ***Build.gradle***
 
+
 _Dependencies used_: 
-` JUnit 4.12`
+- JUnit 4.12
+
+
+***Assumptions***
+- A single character can be a palindrome of itself.
+- A space cannot be a palindrome.

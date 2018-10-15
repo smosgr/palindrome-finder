@@ -1,19 +1,10 @@
-public class Palindrome {
+import java.util.List;
 
-    public Palindrome() {
-    }
+public interface Palindrome {
 
-    public boolean checkForPalindrome(String palindrome) {
+    boolean confirmPalindrome(String palindrome);
 
-        String reverse = "";
+    String suspectedPalindrome(String input);
 
-        for (int i = palindrome.length() - 1; i >= 0; i--) {
-            reverse = reverse + palindrome.charAt(i);
-        }
-
-        if (palindrome.equals(reverse))
-            return true;
-        else
-            return false;
-    }
+    List<String> findPalindromes(String input);
 }

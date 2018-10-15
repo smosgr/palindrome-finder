@@ -40,12 +40,6 @@ jacocoTestReport {
 
         println html.destination.toURI()
     }
-
-    afterEvaluate {
-        classDirectories = files(classDirectories.files.collect {
-            fileTree(dir: it)
-        })
-    }
 }
 
 test.finalizedBy(jacocoTestReport)
