@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PalindromeFinder implements Palindrome {
@@ -60,6 +61,7 @@ public class PalindromeFinder implements Palindrome {
             i++;
         }
 
+        Collections.reverse(palindromes);
         return palindromes;
     }
 

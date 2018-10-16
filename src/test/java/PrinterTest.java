@@ -1,22 +1,28 @@
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class PrinterTest {
 
     @Test
-    public void test_Three_Longest_Palindromes_Are_Printed_Out() {
+    public void print_out_the_longest_palindromes_of_provided_string() {
 
-        //when
+
+        PalindromesProcessor palindromesProcessor = new PalindromesProcessor();
         Printer printer = new Printer();
-        String actual = printer.printOutcome();
 
-        //then
-        String expected = "Text: hijkllkjih, Index: 23, Length: 10 +\n"
-                + "Text: defggfed, Index: 13, Length: 8 + \n"
-                + "Text: abccba, Index: 5 Length: 6+ \n";
+        String providedString = new Input().getProvidedInput();
 
-        assertEquals(expected, actual);
+        List<String> allPalindromes = new PalindromeFinder().findPalindromes(providedString);
+
+
+        String expected = "  Text: hijkllkjih,  Index: 23,  Length: 10\n" +
+                "  Text: defggfed,  Index: 13,  Length: 8\n" +
+                "  Text: abccba,  Index: 5,  Length: 6\n";
+
+        assertEquals(expected, printer.printOutcome(palindromesProcessor.retrieveSortedPalindromesInTreeMap(allPalindromes), allPalindromes));
 
     }
 
